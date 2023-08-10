@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-description: Create a bug report for the pnpm core
+description: Create a bug report for pnpm
 labels: ['template: bug']
 body:
   - type: markdown
@@ -15,25 +15,18 @@ body:
       options:
         - label: I verified that the issue exists in the latest pnpm release
           required: true
-  - type: textarea
-    attributes:
-      label: Provide environment information
-      description: Please run `pnpm env info` in the root directory of your project and paste the results.
-      render: bash
-    validations:
-      required: true
   - type: dropdown
     attributes:
       label: Which area(s) of pnpm are affected? (leave empty if unsure)
       multiple: true
       options:
-        - 'Resolver'
+        - 'Dependencies resolver'
         - 'CLI'
-        - 'Hooks'
         - 'Lockfile'
         - 'Store'
         - 'Package manager compatibility'
         - 'Operating System (Windows, MacOS, Linux)'
+        - 'Hooks'
   - type: input
     attributes:
       label: Link to the code that reproduces this issue or a replay of the bug
@@ -72,7 +65,16 @@ body:
     attributes:
       label: Which Node.js version are you using? (if relevant)
       description: 'Please specify the exact version. For example: 14.18.1'
-  - type: input
+    validations:
+      required: true
+  - type: dropdown
+    id: OS
     attributes:
-      label: How are you using pnpm? (if relevant)
-      description: 'For example: Workspace, Standalone installation'
+      label: What OS are you using?
+      options:
+        - MacOS
+        - Windows
+        - Linux based (Ubuntu, Debian, CentOS...)
+    validations:
+      required: true
+
