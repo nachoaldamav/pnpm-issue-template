@@ -3,11 +3,6 @@ name: Bug Report
 description: Create a bug report for pnpm
 labels: ['template: bug']
 body:
-  - type: markdown
-    attributes:
-      value: |
-        *Note:* If you leave out sections, the issue might be moved to the ["Help" section](https://github.com/pnpm/pnpm/discussions/categories/help).
-        Feature requests should be opened as [discussions](https://github.com/pnpm/pnpm/discussions/new?category=ideas).
   - type: checkboxes
     attributes:
       label: Verify latest release
