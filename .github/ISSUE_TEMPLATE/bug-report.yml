@@ -1,14 +1,14 @@
 ---
-name: Bug Report
+name: Bug Report 🐛
 description: Create a bug report for pnpm
-labels: ['template: bug']
+labels: ['type: bug']
 body:
   - type: checkboxes
     attributes:
       label: Verify latest release
-      description: 'Please run `pnpm install pnpm@latest` to try the latest version of pnpm. Some issues may already be fixed in the latest release, so please verify that your issue reproduces before opening a new issue.'
+      description: 'Please run `pnpm install -g pnpm@latest` to try the latest version of pnpm. Some issues may already be fixed in the latest release, so please verify that your issue reproduces before opening a new issue.'
       options:
-        - label: I verified that the issue exists in the latest pnpm release
+        - label: I verified that the issue exists in the latest pnpm release (Or the latest version of my major)
           required: true
   - type: dropdown
     attributes:
@@ -47,15 +47,6 @@ body:
       description: A clear and concise description of what you expected to happen.
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: Before posting the issue go through the steps you've written down to make sure the steps provided are detailed and clear.
-  - type: markdown
-    attributes:
-      value: Contributors should be able to follow the steps provided in order to reproduce the bug.
-  - type: markdown
-    attributes:
-      value: These steps are used to add integration tests to ensure the same issue does not happen again. Thanks in advance!
   - type: input
     attributes:
       label: Which Node.js version are you using? (if relevant)
@@ -72,4 +63,7 @@ body:
         - Linux based (Ubuntu, Debian, CentOS...)
     validations:
       required: true
-
+  - type: input
+    attributes:
+      label: If your OS is a Linux based, which one it is? (Include the version if relevant)
+      placeholder: Linux, Ubuntu, Debian...
