@@ -65,5 +65,5 @@ body:
       required: true
   - type: input
     attributes:
-      label: If your OS is a Linux based, which one it is? (Include the version if relevant)
+      label: If your OS is Linux based, which one it is? (Include the version if relevant)
       placeholder: Linux, Ubuntu, Debian...
