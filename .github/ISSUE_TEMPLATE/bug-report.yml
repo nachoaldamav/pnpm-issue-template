@@ -9,7 +9,12 @@ body:
       description: 'Please run `pnpm install -g pnpm@latest` to try the latest version of pnpm. Some issues may already be fixed in the latest release, so please verify that your issue reproduces before opening a new issue.'
       options:
         - label: I verified that the issue exists in the latest pnpm release (Or the latest version of my major)
-          required: true
+      validations:
+        required: true
+  - type: input
+    attributes:
+      label: pnpm version
+      description: Fill only if you are not using the latest major version (v7, v8...)
   - type: dropdown
     attributes:
       label: Which area(s) of pnpm are affected? (leave empty if unsure)
@@ -27,15 +32,15 @@ body:
       label: Link to the code that reproduces this issue or a replay of the bug
       description: |
         A link to a GitHub repository minimal reproduction. If a minimal reproduction can't be created please share a replay of the bug which doesn't require sharing a private repo.
-    validations:
-      required: true
+      validations:
+        required: true
   - type: textarea
     id: repro
     attributes:
       label: Reproduction steps
       description: "How do you trigger this bug? Please walk us through it step by step."
-    validations:
-      required: true
+      validations:
+        required: true
   - type: markdown
     attributes:
       value: ----------------------------
@@ -43,8 +48,8 @@ body:
     attributes:
       label: Describe the Bug
       description: A clear and concise description of what the bug is.
-    validations:
-      required: true
+      validations:
+        required: true
   - type: markdown
     attributes:
       value: ----------------------------
@@ -52,8 +57,8 @@ body:
     attributes:
       label: Expected Behavior
       description: A clear and concise description of what you expected to happen.
-    validations:
-      required: true
+      validations:
+        required: true
   - type: markdown
     attributes:
       value: ----------------------------
@@ -61,18 +66,19 @@ body:
     attributes:
       label: Which Node.js version are you using? (if relevant)
       description: 'Please specify the exact version. For example: 14.18.1'
-    validations:
-      required: true
-  - type: dropdown
-    id: OS
+      validations:
+        required: true
+  - type: checkboxes
+    id: operating-systems
     attributes:
-      label: What OS are you using?
+      label: Which operating systems have you used?
+      description: You may select more than one.
       options:
-        - MacOS
-        - Windows
-        - Linux based (Ubuntu, Debian, CentOS...)
-    validations:
-      required: true
+        - label: macOS
+        - label: Windows
+        - label: Linux
+      validations:
+        required: true
   - type: input
     attributes:
       label: If your OS is a Linux based, which one it is? (Include the version if relevant)
